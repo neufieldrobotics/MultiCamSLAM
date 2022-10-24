@@ -1,0 +1,6 @@
+%YAML:1.0
+py_path: "/home/auv/ros_ws/src/light-fields-pack/LFReconstruct/python/"
+model: "bodypix"
+module_name: "Segmentation_bp"
+class_name: "BodyPixModel"
+segmentation_method: "run"

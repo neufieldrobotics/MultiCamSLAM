@@ -1,0 +1,240 @@
+Working with docker
+---------------------
+
+a)Setup your own docker image with required environment
+
+
+b)Using exiting docker image
+
+
+
+
+Required packages and installation
+----------------------------------
+
+Opencv 3.3.1 with gpu support
+ORB_SLAM2
+light-fields-ros
+install ros
+
+
+Making docker image
+---------------------
+
+* Install Docker-ce follow the instructions here : https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+* Install nvidia-docker using instructions here : https://github.com/NVIDIA/nvidia-docker
+   This is useful to use docker image woth nvidia runtime. This avoids the need to install the CUDA/GPU driver inside the containers and have it match the host kernel module. Instead, drivers are on the host and the containers don't need them.https://www.nvidia.com/object/docker-container.html
+
+* run the docker image with it option to get interactive terminal'
+sudo docker run -it --runtime=nvidia nvidia/cuda:9.0-cudnn7-devel
+
+*execute the following commands to detup the docker image
+apt-get update
+  
+* add LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH to bash file
+apt-get install git nano python-dev python-pip wget
+
+
+
+
+INSTALLING ROS
+----------------
+
+* sh -c 'echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list'
+
+apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
+apt-get update
+apt-get install ros-kinetic-ros-base
+
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+INSTALL opencv:
+---------------
+ apt-get install build-essential cmake pkg-config
+$ apt-get install libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev libtbb2 libtbb-dev
+$ apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+$ apt-get install libxvidcore-dev libx264-dev
+$ apt-get install libgtk-3-dev
+$ apt-get install libatlas-base-dev gfortran
+apt -y install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen
+apt -y install libavresample-dev
+apt-get install qt5-default
+apt-get install libdc1394-22-dev libxine2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+apt-get install libopenblas-dev liblapack-dev liblapacke-dev
+apt -y install libgoogle-glog-dev libgflags-dev
+
+
+mkdir software
+cd software
+
+git clone https://github.com/opencv/opencv.git
+cd opencv
+git checkout 3.3.1
+
+cd ..
+* git clone https://github.com/opencv/opencv_contrib.git
+cd opencv_contrib
+git checkout 3.3.1
+cd ..
+* cd opencv
+mkdir build
+cd build
+
+* cmake -D CMAKE_BUILD_TYPE=RELEASE       -D CMAKE_INSTALL_PREFIX=../../opencv/install -D CMAKE_BUILD_TYPE=RELEASE -D WITH_CUDA=ON     -D WITH_TBB=ON       -D WITH_V4L=ON       -D WITH_QT=ON       -D WITH_OPENGL=ON       -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules ..
+
+Install spinnaker ROS
+---------------------
+dowbload spinnaker in your local computer say documents folder
+execute this command
+sudo docker cp spinnaker-1.24.0.60-amd64-Ubuntu16.04-pkg.tar.gz 71a3b955c10a:root/software/
+we can also replace the containerID by findinout it out and storing in a environment variable
+CID=`docker ps | grep -i "gpu_tri_run_3"|awk '{print $1}' |grep -v CONT`
+
+cd ~/software on docker container
+tar zxf spinnaker-1.24.0.60-amd64-Ubuntu16.04-pkg.tar.gz
+cd cd spinnaker-1.24.0.60-amd64
+
+apt-get install libusb-1.0-0  libgtkmm-2.4-dev
+
+sh -c 'echo 1000 > /sys/module/usbcore/parameters/usbfs_memory_mb'
+sh install_spinnaker.sh --> have to remove all sudos inside the script before running.
+if the script complains udev rules not there create mkdir /etc/udev/rules.d folder when it writes the udev rules.
+Then it tries to restart the udev in /etc/init.d/udev --> error ocuured here. Have to check if it can restart udev and access cmeras. and if this step is at all necessary
+make usb work with docker
+
+sudo apt install libunwind-dev ros-kinetic-image-transport (no ccv_bridge, we build it as mentioned in section below)
+
+cd ~/ros_ws/src
+git clone https://github.com/neufieldrobotics/spinnaker_camera_driver.git
+
+cd spinnaker_camera_driver
+nano CMakeLists.txt
+modify set(OpenCV_DIR "~/software/opencv/build")
+cd ../..
+catkin_make
+
+
+Install tensorflow and deeplab
+------------------------------
+pip install tensorflow-gpu 1.12.0
+
+
+Install light-fields-ros
+------------------------
+required : boost - apt-get install libboost-all-dev
+ apt-get install cmake build-essential libboost-all-dev libgoogle-perftools-dev google-perftools libeigen3-dev libatlas-base-dev libsuitesparse-dev libyaml-cpp-dev
+  *install ceres
+  ----------------
+  apt-get install libsuitesparse-dev
+  cd software
+  wget http://ceres-solver.org/ceres-solver-1.14.0.tar.gz
+  cd ceres-solver-1.14.0
+  mkdir ceres-bin
+  cd ceres-bin
+  cmake ..
+  make -j
+  make test
+  make install
+cd
+mkdir -p ~/ros_ws/src
+$ cd ~/ros_ws/
+$ catkin_make
+
+source devel/setup.bash
+echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc 
+
+cd ~/ros_ws/src
+git clone https://gitlab.com/neufieldrobotics/light-fields.git
+username and password  (need to setup ssh for this to automate)
+
+need to add this to CMakeLists.txt
+ find_package(catkin REQUIRED COMPONENTS **message_generation**)
+catkin_package(
+  21    CATKIN_DEPENDS **message_runtime** std_msgs sensor_msgs
+  22   )
+need to add thses to package.xml
+ <build_depend>message_generation</build_depend>
+
+  <exec_depend>message_runtime</exec_depend>
+
+Python libs
+----------
+pip install numpy==1.15.2
+
+pip install --upgrade pip==9.0.1
+pip install jupyter
+pip install Pillow scipy
+
+ROS libraries
+--------------
+cv_bridge - need to compile with opencv coz of the version conflict
+cd ros_ws/src
+git clone https://github.com/PushyamiKaveti/vision_opencv.git
+git checkout origin kinetic
+
+catkin_make
+
+
+Install Gazebo
+----------------------
+apt-get install gazebo7
+gazebo ros_pkgs will be ionstalled under ros workspace separately due to the changes I made.
+Also, the same for cv_bridge
+
+
+Install Synthetic LF (Not needed Now)
+--------------------
+
+Install ORBSLAM2 (Not needed immediately, but in near future)
+---------------- 
+
+
+SETUP JUpyter notebook server
+-----------------------------
+
+
+DOCKER COMMANDS
+------------------
+docker ps - list of containers
+docker ps -a -> all containers
+docker ps -l --> latest container
+
+docker rm <container_id>
+docker rmi <image_id>
+
+docker start <container_id> to start docker container
+docker exec -it <container_id> /bin/bash   -> to open terminal of a running container
+
+
+To Run the exiting docker image 
+--------------------------------
+from terminal issue these commands
+
+$ xhost +local:root 
+
+or
+
+$xhost +local:`docker inspect --format='{{ .Config.Hostname }}' $containerId`
+
+$docker login (if you are not logged in)
+$docker pull neufieldrobotics/lightfields:latest
+$docker start $containerId
+$sudo docker run --privileged  -it -e "DISPLAY=unix:0.0" -v="/tmp/.X11-unix:/tmp/.X11-unix:rw" -v /dev:/dev -p "8888:8888"  --runtime=nvidia neufieldrobotics/lightfields /bin/bash
+
+-----------------------------------------------------
+
+$sudo docker run --privileged  -it -e "DISPLAY=unix:0.0" -v="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --runtime=nvidia nvidia/cudagl:9.0-devel-ubuntu16.04 /bin/bash
+
+
+
+
+
+
+
+
+
+

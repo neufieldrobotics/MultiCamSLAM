@@ -1,0 +1,9 @@
+%YAML:1.0
+MeasurementNoiseSigma: 2.0
+Optimization: 0 # 0-ISAM2 1-LevenbergMarquardt 2-fixedlag levenberg
+ISAMRelinearizeThreshold: 0.1
+ISAMRelinearizeSkip: 2
+WindowBad: 3
+AngleThresh: 0.36
+CamID: 0
+BackEndType: 1 # 0 - MONO, 1-Multi, 2-Multi_rigid
