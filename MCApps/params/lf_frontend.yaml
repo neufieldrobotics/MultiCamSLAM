@@ -10,7 +10,7 @@ RefInd: 2
 InitCondition: 1 #0: min number of features, 1: using matching and determining inliers
 PoseEstimation: 2 #0:pointcloud alignment, 1: seventeen point alg0, 2: generalized P3P
 InterMatch: 1 #0: BF matcher, 1: BoW matcher
-LogDir: /home/auv/ros_ws/src/light-fields-pack/log/
+LogDir: /home/auv/ros_ws/src/MC_slam_packlog/
 ##-------------------------------------------------------------------------------------------
 # KeyFraming Parameters
 ##-------------------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ KFTriangulationAngleThreshold: 0.3 #deg
 #--------------------------------------------------------------------------------------------
 # ORB Parameters
 #--------------------------------------------------------------------------------------------
-Vocabulary: /home/auv/ros_ws/src/light-fields-pack/LFApps/params/ORBvoc.txt
+Vocabulary: /home/auv/ros_ws/src/MC_slam_pack/MCApps/params/ORBvoc.txt
 # ORB Extractor: Number of features per image
 ORBextractor.nFeatures: 1500
 
