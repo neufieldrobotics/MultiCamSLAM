@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="55f419b1-8d57-4dfb-9677-07d72f4021e4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../LFApps/params/lf_backend.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../LFApps/params/lf_backend.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LFApps/params/lf_slam_config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/../../LFApps/params/lf_slam_config.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LFApps/src/lf_slam_app.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LFApps/src/lf_slam_app.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LFSlam/src/FrontEnd.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LFSlam/src/FrontEnd.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LFSlam/src/LightFieldFrame.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LFSlam/src/LightFieldFrame.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/28_08_2020_trajectories/Tum_trajectrory_conv.txt" beforeDir="false" afterPath="$PROJECT_DIR$/28_08_2020_trajectories/Tum_trajectrory_conv.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trajectory_scripts.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Trajectory_scripts.ipynb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2A8YUaVEh8JP03fOlHQfhpwzyOy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55f419b1-8d57-4dfb-9677-07d72f4021e4" name="Changes" comment="" />
+      <created>1654392696629</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654392696629</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -38,6 +38,8 @@ void init_logging(int argc, char** argv) {
 
 }
 
+
+
 void T_from_P(Mat P, Mat &H, double z, double scale, Size img_size) {
 
     Mat_<double> A = Mat_<double>::zeros(3,3);
