@@ -255,6 +255,7 @@ the SLAM pipeline. </p>
 ### i. Curry Center Dataset
 <div align="center">
   <img src="https://github.com/neufieldrobotics/MultiCamSLAM/blob/main/images/curry_center_plot_svo_upd.jpg" alt="image alt text" width="480px"</img>
+</div>
   <p style="text-align:justify"> Estimated trajectories of the Curry center sequence with outdoor
 data and dynamic content. Stars indicate final positions of trajectory
 estimates. Accuracy and robustness improve with increasing number of
@@ -262,21 +263,23 @@ cameras in OV configurations, as shown by accumulated drift in final
 position. Red and blue boxes highlight tracking failures caused by occluding
 dynamic objects. N-OV configuration exhibits scale issues compared to OV
 configuration but is robust to dynamic content </p>
-</div>
+
 
 ### ii. ISEC_Ground1 Dataset
 <div align="center">
   <img src="https://github.com/neufieldrobotics/MultiCamSLAM/blob/main/images/curry_center_plot_svo_upd.jpg" alt="image alt text" width="480px"</img>
-  <p style="text-align:justify"> Estimated trajectories of the ISEC_Ground1 sequence. Here, the robot’s start and end positions are the same, facilitating performance evaluation. We achieve comparable results to ORBSLAM3 and SVO in stereo setup and demonstrate improved accuracy with increasing overlapping cameras.</p>
 </div>
+  <p style="text-align:justify"> Estimated trajectories of the ISEC_Ground1 sequence. Here, the robot’s start and end positions are the same, facilitating performance evaluation. We achieve comparable results to ORBSLAM3 and SVO in stereo setup and demonstrate improved accuracy with increasing overlapping cameras.</p>
+
 
 
 ### iii. ISEC_Lab1 Dataset
 <div align="center">
   <img src="https://github.com/neufieldrobotics/MultiCamSLAM/blob/main/images/isec_5floor_3_upd.jpg" alt="image alt text" width="480px"</img>
+</div>
   <p style="text-align:justify"> Estimated trajectories of the ISEC_Lab1 sequence. Here, the
 ground truth is shown as a dashed line.  We achieve comparable results to ORBSLAM3 and SVO in stereo setup and demonstrate improved accuracy with increasing overlapping cameras. </p>
-</div>
+
 
 
 
