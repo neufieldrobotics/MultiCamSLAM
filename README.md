@@ -1,7 +1,11 @@
 # MultiCam Visual Odometry
 
+## Design and Evaluation of a Generic Visual SLAM Framework for Multi Camera Systems
 ### Version 0.1, December 27th, 2022
-**Authors:** Pushyami Kaveti et al.
+**Authors:** Pushyami Kaveti et al. <br/>
+IEEE Robotics and Automation Letters (RA-L), 2023 <br/>
+
+**Link:** [Paper](https://arxiv.org/abs/2210.07315) | [BibTex](https://github.com/neufieldrobotics/MultiCamSLAM/blob/main/README.md#Citation)
 
 <!-- Description of the work .. -->
 <br/>
@@ -10,7 +14,7 @@
 
 ## A. Prerequisites
 
-We have tested this library in Ubuntu 16.04 and 20.04. 
+We have tested  this library in Ubuntu 16.04 and 20.04. 
 The following external libraries are required for building Multicam Visual Odometry 
 package. We have given the build/install instructions in the next section. 
 
@@ -234,6 +238,63 @@ Edit the below command based on the path to the cfg file.
 -  
     ./devel/lib/LFApps/LFSlamapp --config_file /home/marley/neu_ws/src/light-fields-pack/LFApps/params/lf_slam_config.cfg --log_file /home/marley/log.txt --traj_file /home/marley/traj.txt
 
+
+# 3. Additonal Details from the paper
+
+## a. Setup
+
+<div align="center">
+  <img src="https://github.com/neufieldrobotics/MultiCamSLAM/blob/main/images/camera_rig.png" alt="image alt text" width="480px"</img>
+  <p>The custom-built multi-camera rig used to collect data for evaluating
+the SLAM pipeline. </p>
+</div>
+
+
+## b. Qualitative Results
+
+### i. Curry Center Dataset
+<div align="center">
+  <img src="https://github.com/neufieldrobotics/MultiCamSLAM/blob/main/images/curry_center_plot_svo_upd.jpg" alt="image alt text" width="480px"</img>
+  <p style="text-align:justify"> Estimated trajectories of the Curry center sequence with outdoor
+data and dynamic content. Stars indicate final positions of trajectory
+estimates. Accuracy and robustness improve with increasing number of
+cameras in OV configurations, as shown by accumulated drift in final
+position. Red and blue boxes highlight tracking failures caused by occluding
+dynamic objects. N-OV configuration exhibits scale issues compared to OV
+configuration but is robust to dynamic content </p>
+</div>
+
+### ii. ISEC_Ground1 Dataset
+<div align="center">
+  <img src="https://github.com/neufieldrobotics/MultiCamSLAM/blob/main/images/curry_center_plot_svo_upd.jpg" alt="image alt text" width="480px"</img>
+  <p style="text-align:justify"> Estimated trajectories of the ISEC_Ground1 sequence. Here, the robot’s start and end positions are the same, facilitating performance evaluation. We achieve comparable results to ORBSLAM3 and SVO in stereo setup and demonstrate improved accuracy with increasing overlapping cameras.</p>
+</div>
+
+
+### iii. ISEC_Lab1 Dataset
+<div align="center">
+  <img src="https://github.com/neufieldrobotics/MultiCamSLAM/blob/main/images/isec_5floor_3_upd.jpg" alt="image alt text" width="480px"</img>
+  <p style="text-align:justify"> Estimated trajectories of the ISEC_Lab1 sequence. Here, the
+ground truth is shown as a dashed line.  We achieve comparable results to ORBSLAM3 and SVO in stereo setup and demonstrate improved accuracy with increasing overlapping cameras. </p>
+</div>
+
+
+
+
+
+
+# Citation
+
+If you use this work in an academic context, please cite the following publication:
+
+```
+@article{kaveti2022design,
+  title={Design and Evaluation of a Generic Visual SLAM Framework for Multi-Camera Systems},
+  author={Kaveti, Pushyami and Thamilchelvan, Arvind and Singh, Hanumant},
+  journal={arXiv preprint arXiv:2210.07315},
+  year={2022}
+} 
+```
 
 
 
