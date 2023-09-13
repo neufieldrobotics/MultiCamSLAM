@@ -267,7 +267,7 @@ configuration but is robust to dynamic content </p>
 
 ### ii. ISEC_Ground1 Dataset
 <div align="center">
-  <img src="https://github.com/neufieldrobotics/MultiCamSLAM/blob/main/images/curry_center_plot_svo_upd.jpg" alt="image alt text" width="480px"</img>
+  <img src="https://github.com/neufieldrobotics/MultiCamSLAM/blob/aafcc37b05f3966cab9a6b9a45812afc78fbc473/images/isec_ground1_svo_2_upd.jpg" alt="image alt text" width="480px"</img>
 </div>
   <p style="text-align:justify"> Estimated trajectories of the ISEC_Ground1 sequence. Here, the robot’s start and end positions are the same, facilitating performance evaluation. We achieve comparable results to ORBSLAM3 and SVO in stereo setup and demonstrate improved accuracy with increasing overlapping cameras.</p>
 
