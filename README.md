@@ -5,7 +5,7 @@
 **Authors:** Pushyami Kaveti et al. <br/>
 IEEE Robotics and Automation Letters (RA-L), 2023 <br/>
 
-**Link:** [Paper](https://arxiv.org/abs/2210.07315) | [BibTex](https://github.com/neufieldrobotics/MultiCamSLAM/blob/main/README.md#Citation)
+**Link:** [Paper](https://ieeexplore.ieee.org/document/10253964) | [BibTex](https://github.com/neufieldrobotics/MultiCamSLAM/blob/main/README.md#Citation)
 
 <!-- Description of the work .. -->
 <br/>
@@ -291,12 +291,24 @@ ground truth is shown as a dashed line.  We achieve comparable results to ORBSLA
 If you use this work in an academic context, please cite the following publication:
 
 ```
-@article{kaveti2022design,
-  title={Design and Evaluation of a Generic Visual SLAM Framework for Multi-Camera Systems},
-  author={Kaveti, Pushyami and Thamilchelvan, Arvind and Singh, Hanumant},
-  journal={arXiv preprint arXiv:2210.07315},
-  year={2022}
-} 
+@ARTICLE{10253964,
+
+  author={Kaveti, Pushyami and Vaidyanathan, Shankara Narayanan and Chelvan, Arvind Thamil and Singh, Hanumant},
+
+  journal={IEEE Robotics and Automation Letters}, 
+
+  title={Design and Evaluation of a Generic Visual SLAM Framework for Multi Camera Systems}, 
+
+  year={2023},
+
+  volume={8},
+
+  number={11},
+
+  pages={7368-7375},
+
+  doi={10.1109/LRA.2023.3316609}}
+
 ```
 
 
