@@ -1,7 +1,7 @@
 # MultiCam Visual Odometry
 
 ## Design and Evaluation of a Generic Visual SLAM Framework for Multi Camera Systems
-### Version 0.1, December 27th, 2022
+### Version 0.2, April 10th, 2024
 **Authors:** Pushyami Kaveti et al. <br/>
 IEEE Robotics and Automation Letters (RA-L), 2023 <br/>
 
@@ -52,7 +52,7 @@ Instructions to install ROS can be found in the links below: <br/>
     cd ~/catkin_ws/src
     ```
     ```
-    git clone https://gitlab.com/neufieldrobotics/light-fields-pack
+    git clone https://github.com/neufieldrobotics/MultiCamSLAM
     ``` 
 
 ### 3. <b>OpenCV </b>
@@ -209,23 +209,23 @@ Instructions to install ROS can be found in the links below: <br/>
 
 ## b. Setup the config files
 
-- edit the following paramters in src/light-fields-pack/LFApps/params/lf_frontend.yaml
+- edit the following paramters in src/MultiCamSLAM/MCApps/params/lf_frontend.yaml
     - <u>LogDir </u> - Provide the path to save the log files
-        - Example: ~/catkin_ws/src/light-fields-pack/log/ 
+        - Example: ~/catkin_ws/src/MultiCamSLAM/log/ 
     - <u>Vocabulary </u> - Provide the path to the ORB Vocabulary files
-        - Example: ~/catkin_ws/src/light-fields-pack/LFApps/params/ORBvoc.txt
+        - Example: ~/catkin_ws/src/MultiCamSLAM/MCApps/params/ORBvoc.txt
 
-- edit the following parameters in src/light-fields-pack/LFApps/params/lf_slam_config.cfg
+- edit the following parameters in src/MultiCamSLAM/MCApps/params/lf_slam_config.cfg
     - <u> data_path </u> - Provide the path to the downloaded dataset
         - Example: /home/marley/catkin_ws/ISEC_Lab1/
     - <u> calib_file_path </u> - Provide the path to the settings file for a particular multi-camera rig.
         - Example: /home/marley/catkin_ws/ISEC_Lab1/calib/02_23_2022_5cams_camchain.yaml
     - <u> images_path </u> - Provide the path to the images folder in the downloaded dataset
         - Example: /home/marley/catkin_ws/ISEC_Lab1/image_data/
-    - <u> frontend_params_file </u> - Provide the complete path to the lf_frontend.yaml file in LFApps/params of the package.
-        - Example: /home/marley/catkin_ws/src/light-fields-pack/LFApps/params/lf_frontend.yaml 
-    - <u> backend_params_file </u> - Provide the complete path to the lf_backend.yaml file in LFApps/params of the package.
-        - Example: /home/marley/catkin_ws/src/light-fields-pack/LFApps/params/lf_backend.yaml
+    - <u> frontend_params_file </u> - Provide the complete path to the lf_frontend.yaml file in MCApps/params of the package.
+        - Example: /home/marley/catkin_ws/src/MultiCamSLAM/MCApps/params/lf_frontend.yaml 
+    - <u> backend_params_file </u> - Provide the complete path to the lf_backend.yaml file in MCApps/params of the package.
+        - Example: /home/marley/catkin_ws/src/MultiCamSLAM/MCApps/params/lf_backend.yaml
 
 ## c. Run 
 
@@ -236,7 +236,7 @@ In Terminal 1
 In Terminal 2
 Edit the below command based on the path to the cfg file. 
 -  
-    ./devel/lib/LFApps/LFSlamapp --config_file /home/marley/neu_ws/src/light-fields-pack/LFApps/params/lf_slam_config.cfg --log_file /home/marley/log.txt --traj_file /home/marley/traj.txt
+    ./devel/lib/MCApps/MCSlamapp --config_file /home/marley/neu_ws/src/MultiCamSLAM/MCApps/params/lf_slam_config.cfg --log_file /home/marley/log.txt --traj_file /home/marley/traj.txt
 
 
 # 3. Additonal Details from the paper
