@@ -193,13 +193,13 @@ Instructions to install ROS can be found in the links below: <br/>
 
 - 
     ```
-    catkin_make -DOpenCV_DIR=/home/$USER/catkin_ws/Third_party/opencv/build \
-    -DDBoW2_DIR=/home/$USER/catkin_ws/Third_party/DBoW2/build \
-    -DDLib_DIR=/home/$USER/catkin_ws/Third_party/DLib/build \
-    -Dopengv_DIR=/home/$USER/catkin_ws/Third_party/opengv/build \
-    -DGTSAM_DIR=/home/$USER/catkin_ws/Third_party/gtsam/build \
-    -DGTSAM_UNSTABLE_DIR=/home/$USER/catkin_ws/Third_party/gtsam/build  \
-    -Dopengv_INC_DIR=/home/$USER/catkin_ws/Third_party/opengv/include 
+    catkin_make -DOpenCV_DIR=/home/$USER/catkin_ws/ThirdParty/opencv/build \
+    -DDBoW2_DIR=/home/$USER/catkin_ws/ThirdParty/DBoW2/build \
+    -DDLib_DIR=/home/$USER/catkin_ws/ThirdParty/DLib/build \
+    -Dopengv_DIR=/home/$USER/catkin_ws/ThirdParty/opengv/build \
+    -DGTSAM_DIR=/home/$USER/catkin_ws/ThirdParty/gtsam/build \
+    -DGTSAM_UNSTABLE_DIR=/home/$USER/catkin_ws/ThirdParty/gtsam/build  \
+    -Dopengv_INC_DIR=/home/$USER/catkin_ws/ThirdParty/opengv/include 
     ```
 
 # 2. Running an example
