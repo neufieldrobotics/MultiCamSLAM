@@ -205,7 +205,7 @@ Instructions to install ROS can be found in the links below: <br/>
 # 2. Running an example
 
 ## a. Download the dataset
-- Download the sample dataset from [here](https://drive.google.com/drive/folders/151_ifKEE8WYHAeZ9hGcC69iotIpevBf8?usp=sharing).
+- Download the sample dataset from [here](https://drive.google.com/drive/folders/1aRb25dpCeKKjMVQFPHeHeMk14aqAlTQD?usp=sharing).
 
 ## b. Setup the config files
 
